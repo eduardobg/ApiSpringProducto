@@ -49,7 +49,6 @@ public class ProductoRestController {
 		actualProd.setName(prod.getName());
 		actualProd.setDescription(prod.getDescription());
 		actualProd.setPrice(prod.getPrice());
-		actualProd.setFechaIngreso(prod.getFechaIngreso());
 		
 		return productService.save(actualProd);
 	}
