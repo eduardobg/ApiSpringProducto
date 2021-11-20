@@ -15,6 +15,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 @Table(name = "productos")
 public class Producto {
@@ -25,8 +27,8 @@ public class Producto {
 	private String name;
 	private String description;	
 	private double price;
-	@Temporal(TemporalType.DATE)
-	@Column(name="fecha_ingreso")
+	@CreationTimestamp
+	@Column(name="fecha_ingreso",nullable = false, updatable = false)
 	private Date fechaIngreso;
 
 	public Long getId() {
