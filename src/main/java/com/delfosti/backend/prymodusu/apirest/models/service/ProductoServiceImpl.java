@@ -1,11 +1,10 @@
 package com.delfosti.backend.prymodusu.apirest.models.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.delfosti.backend.prymodusu.apirest.entity.Producto;
+import com.delfosti.backend.prymodusu.apirest.models.dao.ICategoriaDao;
 import com.delfosti.backend.prymodusu.apirest.models.dao.IProductoDao;
 
 @Service
@@ -13,6 +12,9 @@ public class ProductoServiceImpl implements IProductoService{
 
 	@Autowired
 	private IProductoDao productDao;
+	
+	@Autowired
+	private ICategoriaDao actionDao;
 	
 	@Override
 	public List<Producto> findAll() {
@@ -27,9 +29,10 @@ public class ProductoServiceImpl implements IProductoService{
 	}
 
 	@Override
-	public Producto save(Producto producto) {
-		// TODO Auto-generated method stub
-		return productDao.save(producto);
+	public Producto save(Producto prod) {
+		// TODO Auto-generated method stub		
+		
+		return productDao.save(prod);
 	}
 
 	@Override

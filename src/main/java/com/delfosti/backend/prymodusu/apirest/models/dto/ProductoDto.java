@@ -1,33 +1,27 @@
-package com.delfosti.backend.prymodusu.apirest.entity;
+package com.delfosti.backend.prymodusu.apirest.models.dto;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-@Entity
-@Table(name = "productos")
-public class Producto {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProductoDto {
 	private Long id;
 	private String name;
 	private String description;	
 	private double price;
-	@Temporal(TemporalType.DATE)
-	@Column(name="fecha_ingreso")
 	private Date fechaIngreso;
+	private Long catId;
+	public ProductoDto() {
+		
+	}
+	
+	public ProductoDto(Long id, String name, String description, double price, Date fechaIngreso, Long catId) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.price = price;
+		this.fechaIngreso = fechaIngreso;
+		this.catId = catId;
+	}
 
 	public Long getId() {
 		return id;
@@ -59,5 +53,12 @@ public class Producto {
 	public void setFechaIngreso(Date fechaIngreso) {
 		this.fechaIngreso = fechaIngreso;
 	}
-
+	public Long getCatId() {
+		return catId;
+	}
+	public void setCatId(Long catId) {
+		this.catId = catId;
+	}
+	
+	
 }

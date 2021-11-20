@@ -3,6 +3,7 @@ package com.delfosti.backend.prymodusu.apirest.models.service;
 import java.util.List;
 
 import com.delfosti.backend.prymodusu.apirest.entity.Producto;
+import com.delfosti.backend.prymodusu.apirest.models.dto.ProductoDto;
 
 public interface IProductoService {
 

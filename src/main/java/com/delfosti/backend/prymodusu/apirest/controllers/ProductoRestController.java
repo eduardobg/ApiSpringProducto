@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.delfosti.backend.prymodusu.apirest.entity.Producto;
+import com.delfosti.backend.prymodusu.apirest.models.dto.ProductoDto;
 import com.delfosti.backend.prymodusu.apirest.models.service.IProductoService;
 
 @RestController
@@ -43,9 +44,12 @@ public class ProductoRestController {
 	@PutMapping("products/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Producto update(@RequestBody Producto prod, @PathVariable Long id) {
-		Producto actualProd = productService.findById(id);
+		Producto actualProd = productService.findById(id);		
 		
 		actualProd.setName(prod.getName());
+		actualProd.setDescription(prod.getDescription());
+		actualProd.setPrice(prod.getPrice());
+		actualProd.setFechaIngreso(prod.getFechaIngreso());
 		
 		return productService.save(actualProd);
 	}

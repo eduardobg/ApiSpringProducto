@@ -1,9 +1,13 @@
 package com.delfosti.backend.prymodusu.apirest.entity;
 
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -34,5 +38,6 @@ public class Categoria {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	
 }
